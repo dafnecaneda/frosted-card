@@ -32,6 +32,7 @@
   height: 99vh;
 }
 
+
 .avatarwrapper {
   position: absolute;
   left: 24%;
@@ -117,6 +118,7 @@
   border-bottom-right-radius: 8px;
   background-color: #fe6189;
   cursor: pointer;
+  height: 0;
 }
 
 .text-block {
@@ -128,3 +130,21 @@
 
 
 
+.heading {
+  margin-top: 0px;
+  margin-bottom: 16px;
+  font-family: Lora, sans-serif;
+  color: #151515;
+  font-size: 20px;
+  line-height: 20px;
+  cursor: default;
+}
+
+.paragraph {
+  margin-bottom: 0px;
+  font-family: 'Maven Pro', sans-serif;
+  color: #444545;
+  font-size: 12px;
+  line-height: 150%;
+  cursor: default;
+}
