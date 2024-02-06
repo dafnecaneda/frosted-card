@@ -6,6 +6,7 @@ function App() {
   useEffect(() => {
     const icons = document.querySelectorAll<HTMLImageElement>(".heart, .coffe, .world");
     const btn = document.querySelector<HTMLDivElement>(".btn");
+    const textBlock = document.querySelector<HTMLDivElement>(".text-block");
 
     function handleMouseEnter() {
       gsap.to(
@@ -13,12 +14,14 @@ function App() {
         { y: 0, opacity: 1, stagger: { amount: 0.2, from: "start", grid: "auto", axis: "x" }, duration: 0.5 } // Final state with stagger
       );
 
-      gsap.to(btn, { y: 0, opacity: 1, duration: 0.5 }); // Slide up button and fade in text
+      gsap.to(btn, { y: 0, duration: 0.5 }); // Slide up button
+      gsap.to(textBlock, { opacity: 1, duration: 0.5 }); // Fade in text
     }
 
     function handleMouseLeave() {
       gsap.to(icons, { y: 100, opacity: 0, duration: 0.5 });
-      gsap.to(btn, { y: 100, opacity: 0, duration: 0.5 }); // Slide down button and fade out text
+      gsap.to(btn, { y: 100, duration: 0.5 }); // Slide down button
+      gsap.to(textBlock, { opacity: 0, duration: 0.5 }); // Fade out text
     }
 
     const frostedCard = document.querySelector<HTMLDivElement>(".frostedcard");
