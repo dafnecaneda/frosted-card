@@ -104,6 +104,7 @@
 
 .iconstyle {
   cursor: pointer;
+  opacity: 0;
 }
 
 .btn {
@@ -124,3 +125,6 @@
   font-size: 20px;
   text-transform: uppercase;
 }
+
+
+

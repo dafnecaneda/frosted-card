@@ -1,6 +1,39 @@
 import "./App.css";
+import { useEffect } from "react";
+import gsap from "gsap";
 
 function App() {
+  useEffect(() => {
+    const icons = document.querySelectorAll<HTMLImageElement>(".heart, .coffe, .world");
+
+    function handleMouseEnter() {
+      gsap.to(
+        icons,
+        { y: 0, opacity: 1, stagger: {
+          amount: 0.2,
+          from: "start",
+          grid: "auto",
+          axis: "x"
+        }, duration: 0.5 } // Final state with stagger
+      );
+    }
+
+    function handleMouseLeave() {
+      gsap.to(icons, { y: 100, opacity: 0, duration: 0.5 });
+    }
+
+    const frostedCard = document.querySelector<HTMLDivElement>(".frostedcard");
+    if (frostedCard) {
+      frostedCard.addEventListener("mouseenter", handleMouseEnter);
+      frostedCard.addEventListener("mouseleave", handleMouseLeave);
+
+      return () => {
+        frostedCard.removeEventListener("mouseenter", handleMouseEnter);
+        frostedCard.removeEventListener("mouseleave", handleMouseLeave);
+      };
+    }
+  }, []); // Run once on mount
+  
   return (
     <>
       <div className="container">
