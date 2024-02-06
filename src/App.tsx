@@ -8,19 +8,24 @@ function App() {
     const btn = document.querySelector<HTMLDivElement>(".btn");
     const textBlock = document.querySelector<HTMLDivElement>(".text-block");
 
+    // Initial animation on mount
+    gsap.set(icons, { y: 100, opacity: 0 });
+    gsap.set(btn, { y: 100, opacity: 0 });
+    gsap.set(textBlock, { opacity: 0 });
+
     function handleMouseEnter() {
       gsap.to(
         icons,
         { y: 0, opacity: 1, stagger: { amount: 0.2, from: "start", grid: "auto", axis: "x" }, duration: 0.5 } // Final state with stagger
       );
 
-      gsap.to(btn, { y: 0, duration: 0.5 }); // Slide up button
+      gsap.to(btn, { y: 0, opacity: 1, duration: 0.5 }); // Slide up button
       gsap.to(textBlock, { opacity: 1, duration: 0.5 }); // Fade in text
     }
 
     function handleMouseLeave() {
       gsap.to(icons, { y: 100, opacity: 0, duration: 0.5 });
-      gsap.to(btn, { y: 100, duration: 0.5 }); // Slide down button
+      gsap.to(btn, { y: 100, opacity: 0, duration: 0.5 }); // Slide down button
       gsap.to(textBlock, { opacity: 0, duration: 0.5 }); // Fade out text
     }
 
@@ -35,7 +40,7 @@ function App() {
       };
     }
 
-    // Initial animation on mount
+    // Trigger initial animation
     handleMouseEnter();
   }, []); // Run once on mount
   
