@@ -5,21 +5,20 @@ import gsap from "gsap";
 function App() {
   useEffect(() => {
     const icons = document.querySelectorAll<HTMLImageElement>(".heart, .coffe, .world");
+    const btn = document.querySelector<HTMLDivElement>(".btn");
 
     function handleMouseEnter() {
       gsap.to(
         icons,
-        { y: 0, opacity: 1, stagger: {
-          amount: 0.2,
-          from: "start",
-          grid: "auto",
-          axis: "x"
-        }, duration: 0.5 } // Final state with stagger
+        { y: 0, opacity: 1, stagger: { amount: 0.2, from: "start", grid: "auto", axis: "x" }, duration: 0.5 } // Final state with stagger
       );
+
+      gsap.to(btn, { y: 0, opacity: 1, duration: 0.5 }); // Slide up button and fade in text
     }
 
     function handleMouseLeave() {
       gsap.to(icons, { y: 100, opacity: 0, duration: 0.5 });
+      gsap.to(btn, { y: 100, opacity: 0, duration: 0.5 }); // Slide down button and fade out text
     }
 
     const frostedCard = document.querySelector<HTMLDivElement>(".frostedcard");
@@ -32,6 +31,9 @@ function App() {
         frostedCard.removeEventListener("mouseleave", handleMouseLeave);
       };
     }
+
+    // Initial animation on mount
+    handleMouseEnter();
   }, []); // Run once on mount
   
   return (
