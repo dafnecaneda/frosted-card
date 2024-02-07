@@ -10,6 +10,7 @@
   box-shadow: 0 5px 14px 0 rgba(0, 0, 0, 0.4);
   perspective: 1200px;
   transform: perspective(1200px);
+  transform-style: preserve-3d
 }
 
 .blurbg {
@@ -36,7 +37,7 @@
 .avatarwrapper {
   position: absolute;
   left: 24%;
-  top: 20%;
+  top: 30%;
   right: 0%;
   bottom: 0%;
   z-index: 100;
@@ -48,8 +49,10 @@
   background-position: 50% 50%;
   background-size: cover;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
-  transform: perspective(0px) perspective(0px);
+  transform-style: preserve-3d;
 }
+
+.frostedcard:hover .avatarwrapper { transform: translateZ(20px); transform-style: preserve-3d;}
 
 .contentwrapper {
   position: relative;

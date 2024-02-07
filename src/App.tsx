@@ -1,9 +1,11 @@
 import "./App.css";
 import { useEffect } from "react";
 import gsap from "gsap";
+import VanillaTilt from "vanilla-tilt";
 
 function App() {
   useEffect(() => {
+    VanillaTilt.init(document.querySelector<HTMLDivElement>(".frostedcard")!);
     const icons = document.querySelectorAll<HTMLImageElement>(".heart, .coffe, .world");
     const btn = document.querySelector<HTMLDivElement>(".btn");
     const textBlock = document.querySelector<HTMLDivElement>(".text-block");
@@ -46,9 +48,9 @@ function App() {
   return (
     <>
       <div className="container">
-        <div className="frostedcard">
-          <div className="blurbg"></div>
-          <div className="avatarwrapper"></div>
+        <div className="frostedcard" data-tilt>
+          <div className="blurbg" data-tilt></div>
+          <div className="avatarwrapper" data-tilt></div>
 
           <div className="icons">
             <img
