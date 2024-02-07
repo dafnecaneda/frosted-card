@@ -5,12 +5,16 @@ import VanillaTilt from "vanilla-tilt";
 
 function App() {
   useEffect(() => {
-    VanillaTilt.init(document.querySelector<HTMLDivElement>(".frostedcard")!);
-    const icons = document.querySelectorAll<HTMLImageElement>(".heart, .coffe, .world");
+
+    VanillaTilt.init(document.querySelector<HTMLDivElement>(".frostedcard")!, {
+      reverse: true
+    });
+    const icons = document.querySelectorAll<HTMLImageElement>(
+      ".heart, .coffee, .sign"
+    );
     const btn = document.querySelector<HTMLDivElement>(".btn");
     const textBlock = document.querySelector<HTMLDivElement>(".text-block");
 
-    // Initial animation on mount
     gsap.set(icons, { y: 100, opacity: 0 });
     gsap.set(btn, { y: 100, opacity: 1, height: "auto" }); // Set initial height to "auto"
     gsap.set(textBlock, { opacity: 0 });
@@ -18,7 +22,12 @@ function App() {
     function handleMouseEnter() {
       gsap.to(
         icons,
-        { y: 0, opacity: 1, stagger: { amount: 0.2, from: "start", grid: "auto", axis: "x" }, duration: 0.5 } // Final state with stagger
+        {
+          y: 0,
+          opacity: 1,
+          stagger: { amount: 0.2, from: "start", grid: "auto", axis: "x" },
+          duration: 0.5,
+        }
       );
 
       gsap.to(btn, { y: 0, opacity: 1, height: "72px", duration: 0.5 }); // Slide up button and set height to original
@@ -42,15 +51,14 @@ function App() {
       };
     }
 
-    // Trigger initial animation
     handleMouseEnter();
-  }, []); // Run once on mount
+  }, []);
   return (
     <>
       <div className="container">
-        <div className="frostedcard" data-tilt>
-          <div className="blurbg" data-tilt></div>
-          <div className="avatarwrapper" data-tilt></div>
+        <div className="frostedcard" data-tilt data-tilt-reverse="true">
+          <div className="blurbg" data-tilt data-tilt-reverse="true"></div>
+          <div className="avatarwrapper" data-tilt data-tilt-reverse="true"></div>
 
           <div className="icons">
             <img
@@ -59,11 +67,11 @@ function App() {
             />
             <img
               src="https://uploads-ssl.webflow.com/5fd0f3edc08992febba491a1/5fd37ead47da6caeb10d8e43_coffee.svg"
-              className="iconstyle heart"
+              className="iconstyle coffee"
             />
             <img
               src="https://uploads-ssl.webflow.com/5fd0f3edc08992febba491a1/5fd37eada350a7820fe59538_at-sign.svg"
-              className="iconstyle heart"
+              className="iconstyle sign"
             />
           </div>
 

@@ -10,7 +10,7 @@
   box-shadow: 0 5px 14px 0 rgba(0, 0, 0, 0.4);
   perspective: 1200px;
   transform: perspective(1200px);
-  transform-style: preserve-3d
+  transform-style: preserve-3d;
 }
 
 .blurbg {
@@ -33,7 +33,6 @@
   height: 99vh;
 }
 
-
 .avatarwrapper {
   position: absolute;
   left: 24%;
@@ -50,9 +49,15 @@
   background-size: cover;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
   transform-style: preserve-3d;
+  transform: perspective(1200px);
+  transition: transform 0.5s ease;
+
 }
 
-.frostedcard:hover .avatarwrapper { transform: translateZ(20px); transform-style: preserve-3d;}
+.frostedcard:hover .avatarwrapper {
+  transform: translate3d(-10%, -30%, 90px) scale3d(1, 1, 1);
+  transform-style: preserve-3d;
+}
 
 .contentwrapper {
   position: relative;
@@ -125,13 +130,11 @@
 }
 
 .text-block {
-  font-family: 'Maven Pro', sans-serif;
+  font-family: "Maven Pro", sans-serif;
   color: #fff;
   font-size: 20px;
   text-transform: uppercase;
 }
-
-
 
 .heading {
   margin-top: 0px;
@@ -145,7 +148,7 @@
 
 .paragraph {
   margin-bottom: 0px;
-  font-family: 'Maven Pro', sans-serif;
+  font-family: "Maven Pro", sans-serif;
   color: #444545;
   font-size: 12px;
   line-height: 150%;
