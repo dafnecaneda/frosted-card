@@ -79,10 +79,11 @@ function App() {
             <div className="innercontent">
               <div className="centeredcontent">
                 <div className="textwrapper">
-                  <h2 className="heading">A Large Heading</h2>
+                  <h2 className="heading">Glassmorphism</h2>
                   <p className="paragraph">
-                    Quam sed mus sed gravida at quis maecenas duis. Id nunc, et
-                    cras pretium nullam nunc nec, massa accumsan.
+                    Made with React, TypeScript, GSAP, vanilla-tilt.js, and lots of CSS.  <a href="https://github.com/dafnecaneda/frosted-card" target="_blank">Source code</a><br />
+                    By  <a href="https://dafnecaneda.vercel.app/" target="_blank">Dafne Caneda</ a>
+                   
                   </p>
                 </div>
               </div>

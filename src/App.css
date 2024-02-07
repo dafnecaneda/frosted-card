@@ -36,7 +36,7 @@
 .avatarwrapper {
   position: absolute;
   left: 24%;
-  top: 30%;
+  top: 32%;
   right: 0%;
   bottom: 0%;
   z-index: 100;
@@ -44,7 +44,7 @@
   height: 106px;
   align-self: center;
   border-radius: 8px;
-  background-image: url(https://globalnews.ca/wp-content/uploads/2016/02/hubble-carina.jpg?quality=85&strip=all);
+  background-image: url(https://i.pinimg.com/564x/68/2a/8f/682a8f0f0674c619233dd8d385c53978.jpg);
   background-position: 50% 50%;
   background-size: cover;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
@@ -55,7 +55,7 @@
 }
 
 .frostedcard:hover .avatarwrapper {
-  transform: translate3d(-10%, -30%, 90px) scale3d(1, 1, 1);
+  transform: translate3d(0%, -30%, 90px) scale3d(1, 1, 1);
   transform-style: preserve-3d;
 }
 
@@ -72,6 +72,7 @@
   background-color: #fff;
   perspective: 1200px;
   transform: perspective(1200px);
+  
 }
 
 .innercontent {
@@ -127,6 +128,7 @@
   background-color: #fe6189;
   cursor: pointer;
   height: 0;
+  overflow: hidden; 
 }
 
 .text-block {
@@ -138,11 +140,11 @@
 
 .heading {
   margin-top: 0px;
-  margin-bottom: 16px;
+  margin-bottom: 15px;
   font-family: Lora, sans-serif;
   color: #151515;
   font-size: 20px;
-  line-height: 20px;
+  line-height: 10px;
   cursor: default;
 }
 
