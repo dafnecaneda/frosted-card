@@ -16,7 +16,7 @@ function App() {
     const textBlock = document.querySelector<HTMLDivElement>(".text-block");
 
     gsap.set(icons, { y: 100, opacity: 0 });
-    gsap.set(btn, { y: 100, opacity: 1, height: "auto" }); // Set initial height to "auto"
+    gsap.set(btn, { y: 100, opacity: 1 }); 
     gsap.set(textBlock, { opacity: 0 });
 
     function handleMouseEnter() {
